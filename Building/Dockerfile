@@ -261,6 +261,7 @@ RUN dpkg -i TensorRT-${version}.Linux.${arch}-gnu.${cuda}.deb \
 #  && cd TensorRT-${version}/onnx_graphsurgeon \
 #  && python3 -m pip install onnx_graphsurgeon-0.5.0-py2.py3-none-any.whl \
   && export LD_LIBRARY_PATH=<TensorRT-${version}/lib>:$LD_LIBRARY_PATH \
+  && cd TensorRT-${version}/python \
   && pip install tensorflow[and-cuda] \
   && python3 -m pip install --upgrade pip \
   && python3 -m pip install wheel \
