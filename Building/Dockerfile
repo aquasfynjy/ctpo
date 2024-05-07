@@ -80,6 +80,7 @@ RUN apt-get install -y \
     libatk-adaptor \
     libatlas-base-dev \
     libboost-all-dev \
+    libbz2-dev \
     libcanberra-gtk-module \
     libdc1394-dev \
     libeigen3-dev \
