@@ -261,8 +261,9 @@ RUN dpkg -i TensorRT-${version}.Linux.${arch}-gnu.${cuda}.deb \
 #  && cd TensorRT-${version}/onnx_graphsurgeon \
 #  && python3 -m pip install onnx_graphsurgeon-0.5.0-py2.py3-none-any.whl \
 ##  && export LD_LIBRARY_PATH=<TensorRT-${version}/lib>:$LD_LIBRARY_PATH \
-  && cp /var/nv-tensorrt-local-repo-ubuntu2204-10.0.0-cuda-12.4/nv-tensorrt-local-*-keyring.gpg /usr/share/keyrings/
+  && cp /var/nv-tensorrt-local-repo-ubuntu2204-10.0.0-cuda-12.4/nv-tensorrt-local-*-keyring.gpg /usr/share/keyrings/ \
   && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/python3.11/site-packages/tensorrt_libs \
+  && apt-get install tensorrt \
   && pip install tensorflow[and-cuda] \
   && python3 -m pip install --upgrade pip \
   && python3 -m pip install wheel \
