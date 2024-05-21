@@ -249,19 +249,19 @@ RUN pip3 install -U \
 
 ENV version="10.0.0.0"
 ENV arch="x86_64"
-ENV cuda="cuda-12.4"
+ENV cuda="cuda-12.3"
 
-COPY nv-tensorrt-local-repo-ubuntu2204-10.0.0-cuda-12.4_1.0-1_amd64.deb TensorRT-${version}.Linux.${arch}-gnu.${cuda}.deb
+COPY nv-tensorrt-local-repo-ubuntu2204-10.0.0-cuda-12.3_1.0-1_amd64.deb TensorRT-${version}.Linux.${arch}-gnu.${cuda}.deb
 
 RUN dpkg -i TensorRT-${version}.Linux.${arch}-gnu.${cuda}.deb \
-#  && cp /var/nv-tensorrt-local-repo-ubuntu2204-10.0.0-cuda-12.4/nv-tensorrt-local*keyring.gpg /usr/share/keyrings/ \
+#  && cp /var/nv-tensorrt-local-repo-ubuntu2204-10.0.0-cuda-12.3/nv-tensorrt-local*keyring.gpg /usr/share/keyrings/ \
 #  && export LD_LIBRARY_PATH=<TensorRT-${version}/lib>:$LD_LIBRARY_PATH \
 #  && cd TensorRT-${version}/python \
 #  && python3 -m pip install tensorrt-*-cp311-none-linux_x86_64.whl \
 #  && cd TensorRT-${version}/onnx_graphsurgeon \
 #  && python3 -m pip install onnx_graphsurgeon-0.5.0-py2.py3-none-any.whl \
 ##  && export LD_LIBRARY_PATH=<TensorRT-${version}/lib>:$LD_LIBRARY_PATH \
-  && cp /var/nv-tensorrt-local-repo-ubuntu2204-10.0.0-cuda-12.4/nv-tensorrt-local-*-keyring.gpg /usr/share/keyrings/ \
+  && cp /var/nv-tensorrt-local-repo-ubuntu2204-10.0.0-cuda-12.3/nv-tensorrt-local-*-keyring.gpg /usr/share/keyrings/ \
   && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/python3.11/site-packages/tensorrt_libs \
   && apt-get -y install tensorrt \
   && pip install tensorflow[and-cuda] \
